@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apple</title>
+</head>
+<body>
+<script>
+  function Apple(weight) {
+      this.weight=weight;
+      this.isEmpty=function () {
+          return this.weight===0;
+      }
+  }
+  function Human(name,gender,weight) {
+      this.name=name;
+      this.gender=gender;
+      this.weight=weight;
+      this.eat=function (apple) {
+          if (apple.isEmpty()){alert("Apple is empty")} else apple.weight--
+      }
+      this.say=function () {
+          let i=prompt("Nhập từ muốn nói")
+          alert(this.name+"nói:"+i)
+      }
+  }
+  let apple=new Apple(10);
+  document.write('we have an apple with weight= '+apple.weight +'<br>')
+  // alert(' Adam, and Eva play a game.  Winner will eat the last apple pieces  ');
+  // alert('Play the game-->You are Eva and play with Adam')
+  let Adam=new Human("Adam","Male",100);
+  let Eva=new Human('Eva',"Female",50);
+while (!apple.isEmpty()){
+    Adam.eat(apple);
+   document.write('Adam eat 1 pieces. Apple.weight='+apple.weight+'<br>')
+    Eva.eat(apple);
+    document.write('Eva eat 1 pieces. Apple.weight='+apple.weight+'<br>')
+}
+
+</script>
+</body>
+</html>
